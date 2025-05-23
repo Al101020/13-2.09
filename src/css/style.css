@@ -1,3 +1,77 @@
 body {
   background: rgb(227, 238, 200);
 }
+
+/* Введение в занятие по теме "Анимации и CSS" */
+
+.chameleon {
+  display: inline-block;
+  
+  padding: 12px 24px;
+  border: 2px solid #333;
+  border-radius: 6px;
+
+  /* background: red; - работает*/
+  /* background-color: aqua; - работает*/
+  color: white;
+  font-size: xx-large;
+  cursor: pointer;
+}
+
+.chameleon-animation {
+  color: red;
+  
+  transition: color 2s;
+}
+
+.chameleon-animation:hover {
+  color: blue;
+}
+
+/* Coin Sample Starter */
+/* .coin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  width: 60px;
+  height: 60px;
+  
+  border-radius: 50%;
+} */
+
+/* Видео: CSS transition. */
+
+.flex-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.spacer {
+  flex-grow: 0;
+
+  transition: all 3s; /* анимируем перепрыгивание, добавление этой строки приводит к медленному переходу */
+}
+
+.spacer {
+  animation-name: move;
+  animation-duration: 3s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: 2;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
+
+.flex-container:hover .spacer {
+  flex-grow: 1; /* при наведении контейнер аspacer увеличивается на всю длину 
+  и выталкивает Кубик в противоположную сторону, что приводит к пекрепрыгиванию */
+  /* animation-play-state: running; */
+}
+
+.moving {
+  height: 100px;
+  width: 100px;
+
+  background-color: coral;
+}

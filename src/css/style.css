@@ -2,7 +2,7 @@ body {
   background: rgb(227, 238, 200);
 }
 
-/* Введение в занятие по теме "Анимации и CSS" */
+/*------- Введение в занятие по теме "Анимации и CSS" -------*/
 
 .chameleon {
   display: inline-block;
@@ -41,20 +41,51 @@ body {
   border-radius: 50%;
 } */
 
-/* Видео: CSS transition. */
-
-.flex-container {
+/*------- Видео: CSS transition. -------*/
+/* 1. */
+.flex-container1 {
   display: flex;
   justify-content: flex-start;
 }
 
-.spacer {
+.spacer1 {
+  flex-grow: 0;
+}
+
+/* .spacer1 {
+  animation-name: move;
+  animation-duration: 3s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: 2;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+} */
+
+.flex-container1:hover .spacer1 {
+  flex-grow: 1; /* при наведении контейнер аspacer увеличивается на всю длину 
+  и выталкивает Кубик в противоположную сторону, что приводит к пекрепрыгиванию */
+  /* animation-play-state: running; */
+}
+
+.moving1 {
+  height: 100px;
+  width: 100px;
+
+  background-color: coral;
+}
+/* 2. */
+.flex-container2 {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.spacer2 {
   flex-grow: 0;
 
   transition: all 3s; /* анимируем перепрыгивание, добавление этой строки приводит к медленному переходу */
 }
 
-.spacer {
+.spacer2 {
   animation-name: move;
   animation-duration: 3s;
   animation-direction: alternate-reverse;
@@ -63,13 +94,221 @@ body {
   animation-play-state: paused;
 }
 
-.flex-container:hover .spacer {
+.flex-container2:hover .spacer2 {
   flex-grow: 1; /* при наведении контейнер аspacer увеличивается на всю длину 
   и выталкивает Кубик в противоположную сторону, что приводит к пекрепрыгиванию */
   /* animation-play-state: running; */
 }
 
-.moving {
+.moving2 {
+  height: 100px;
+  width: 100px;
+
+  background-color: coral;
+}
+
+/*------- Видео: CSS animation. -------*/
+/* 1. */
+.blink {
+  animation-name: blink;  /* набор кадров у корорых есть имя, тоесть @keyframes. 
+  Но одного имени недостаточно, например нужно время(по умолчанию 0), то есть animation-duration */
+  animation-duration: 1s;  /* если ни чего не добавлять, то митгнёт один раз */
+  animation-iteration-count: infinite;  /* эта стррока заставит повторятся видео бесконечно */  
+}
+
+@keyframes blink {
+  from {     /* from или 0%, разницы нет */
+    opacity: 1;
+  }
+  
+  49% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  to {     /* to или 100%, разницы нет */
+    opacity: 0;
+  }
+}
+
+/* 2. */
+
+.flex-container3 {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.spacer3 {
+  flex-grow: 0;
+}
+
+.flex-container3:hover .spacer3 {
+  /* flex-grow: 1; при наведении контейнер аspacer увеличивается на всю длину 
+  и выталкивает Кубик в противоположную сторону, что приводит к пекрепрыгиванию */
+  /* animation-play-state: running; */
+  animation-name: move3;
+  animation-duration: 3s;
+}
+
+@keyframes move3 {
+  from {     /* from или 0%, разницы нет */
+    flex-grow: 0;
+  }
+
+  to {     /* to или 100%, разницы нет */
+    flex-grow: 1;
+  }
+}
+
+.moving3 {
+  height: 100px;
+  width: 100px;
+
+  background-color: coral;
+}
+
+/* 3. */
+
+.flex-container4 {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.spacer4 {
+  flex-grow: 0;
+}
+
+.flex-container4:hover .spacer4 {
+  animation-name: move4;
+  animation-duration: 3s;
+  animation-direction: reverse;
+}
+
+@keyframes move4 {
+  from {     /* from или 0%, разницы нет */
+    flex-grow: 0;
+  }
+
+  to {     /* to или 100%, разницы нет */
+    flex-grow: 1;
+  }
+}
+
+.moving4 {
+  height: 100px;
+  width: 100px;
+
+  background-color: coral;
+}
+
+/* 4. */
+
+.flex-container5 {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.spacer5 {
+  flex-grow: 0;
+}
+
+.flex-container5:hover .spacer5 {
+  animation-name: move5;
+  animation-duration: 3s;
+  animation-direction: alternate;
+  animation-iteration-count: 2;
+  /* что бы почувствовать alternate нужно добавить хотябы 2-е итерации */
+}
+
+@keyframes move5 {
+  from {     /* from или 0%, разницы нет */
+    flex-grow: 0;
+  }
+
+  to {     /* to или 100%, разницы нет */
+    flex-grow: 1;
+  }
+}
+
+.moving5 {
+  height: 100px;
+  width: 100px;
+
+  background-color: coral;
+}
+
+/* 5. */
+
+.flex-container6 {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.spacer6 {
+  flex-grow: 0;
+}
+
+.flex-container6:hover .spacer6 {
+  animation-name: move6;
+  animation-duration: 3s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: 2;
+  /* что бы почувствовать alternate нужно добавить хотябы 2-е итерации */
+  animation-fill-mode: forwards;
+  /* чтобы не перепрыгивал обратно в начало, когда заканчивается animation */
+}
+
+@keyframes move6 {
+  from {     /* from или 0%, разницы нет */
+    flex-grow: 0;
+  }
+
+  to {     /* to или 100%, разницы нет */
+    flex-grow: 1;
+  }
+}
+
+.moving6 {
+  height: 100px;
+  width: 100px;
+
+  background-color: coral;
+}
+
+/* 6. */
+
+.flex-container7 {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.spacer7 {
+  animation-name: move7;
+  animation-duration: 3s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;   /* бесконечно */
+  animation-fill-mode: forwards;
+  /* чтобы не перепрыгивал обратно в начало, когда заканчивается animation */
+}
+
+.flex-container7:hover .spacer7 {
+  animation-play-state: paused;
+}
+
+@keyframes move7 {
+  from {     /* from или 0%, разницы нет */
+    flex-grow: 0;
+  }
+
+  to {     /* to или 100%, разницы нет */
+    flex-grow: 1;
+  }
+}
+
+.moving7 {
   height: 100px;
   width: 100px;
 

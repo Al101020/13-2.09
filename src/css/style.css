@@ -2,6 +2,13 @@ body {
   background: rgb(227, 238, 200);
 }
 
+h2 {
+  color: rgb(0, 55, 0);
+}
+
+h3 {
+  color: rgb(1, 1, 80);
+}
 /*------- Введение в занятие по теме "Анимации и CSS" -------*/
 
 .chameleon {
@@ -314,3 +321,5 @@ body {
 
   background-color: coral;
 }
+
+/*------- Видео: CSS transform. -------*/

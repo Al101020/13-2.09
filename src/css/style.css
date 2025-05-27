@@ -47,6 +47,15 @@ h3 {
   
   border-radius: 50%;
 } */
+/* .fa_v4_1 {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesoe;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
 
 /*------- Видео: CSS transition. -------*/
 /* 1. */
@@ -302,7 +311,7 @@ h3 {
 }
 
 .flex-container7:hover .spacer7 {
-  animation-play-state: paused;
+  animation-play-state: paused;/*  работает, при наведении пауза(останавливается) */
 }
 
 @keyframes move7 {
@@ -323,3 +332,75 @@ h3 {
 }
 
 /*------- Видео: CSS transform. -------*/
+.coin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%;
+
+  font-weight: 700;
+  font-size: xx-large;
+  background: seagreen;
+  color: white;
+  cursor: pointer;
+}
+
+.coin-animation {
+  animation-name: coin;
+  animation-duration: 2s;/* чтобы анимация была видна, тоесть время анимации */
+  animation-iteration-count: infinite;/* сделаем её бесконечной */
+}
+
+@keyframes coin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.flex-container8 {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.spacer8 {
+  animation-name: move8;
+  animation-duration: 3s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;   /* бесконечно */
+  animation-fill-mode: forwards;
+  /* чтобы не перепрыгивал обратно в начало, когда заканчивается animation */
+  animation-play-state: paused; /* добавил в четвертом видео trasform */
+}
+
+.flex-container8:hover .spacer8 {
+  /* animation-play-state: paused; работает, при наведении пауза(останавливается) */
+  animation-play-state: running;
+}
+
+@keyframes move8 {
+  from {     /* from или 0%, разницы нет */
+    flex-grow: 0;
+  }
+
+  to {     /* to или 100%, разницы нет */
+    flex-grow: 1;
+  }
+}
+
+.moving8 {
+  height: 100px;
+  width: 100px;
+
+  background-color: coral;
+  /* transform: matrix(1, 0, 0, 1, 0, 0); нормальное состояние */
+  /* transform: matrix(2, 1, 0, 1, 30, -30); убираем эксперименты */
+
+}
